@@ -34,14 +34,18 @@
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.pb2 = new System.Windows.Forms.PictureBox();
             this.pb3 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.gameTime = new System.Windows.Forms.Timer(this.components);
             this.pb4 = new System.Windows.Forms.PictureBox();
+            this.player = new System.Windows.Forms.PictureBox();
+            this.enemy = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -89,11 +93,11 @@
             this.pb3.TabIndex = 4;
             this.pb3.TabStop = false;
             // 
-            // timer1
+            // gameTime
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.gameTime.Enabled = true;
+            this.gameTime.Interval = 1;
+            this.gameTime.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pb4
             // 
@@ -104,12 +108,32 @@
             this.pb4.TabIndex = 5;
             this.pb4.TabStop = false;
             // 
+            // player
+            // 
+            this.player.BackColor = System.Drawing.Color.Black;
+            this.player.Location = new System.Drawing.Point(269, 331);
+            this.player.Name = "player";
+            this.player.Size = new System.Drawing.Size(33, 41);
+            this.player.TabIndex = 6;
+            this.player.TabStop = false;
+            // 
+            // enemy
+            // 
+            this.enemy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.enemy.Location = new System.Drawing.Point(269, 34);
+            this.enemy.Name = "enemy";
+            this.enemy.Size = new System.Drawing.Size(33, 41);
+            this.enemy.TabIndex = 7;
+            this.enemy.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(364, 441);
+            this.Controls.Add(this.enemy);
+            this.Controls.Add(this.player);
             this.Controls.Add(this.pb4);
             this.Controls.Add(this.pb3);
             this.Controls.Add(this.pb2);
@@ -121,12 +145,16 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Super Racer";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -138,8 +166,10 @@
         private System.Windows.Forms.PictureBox pb1;
         private System.Windows.Forms.PictureBox pb2;
         private System.Windows.Forms.PictureBox pb3;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer gameTime;
         private System.Windows.Forms.PictureBox pb4;
+        private System.Windows.Forms.PictureBox player;
+        private System.Windows.Forms.PictureBox enemy;
     }
 }
 
