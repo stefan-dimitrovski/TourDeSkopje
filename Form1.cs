@@ -12,6 +12,11 @@ namespace CarRacer
 {
     public partial class Form1 : Form
     {
+
+        bool left, right;
+
+
+
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +27,14 @@ namespace CarRacer
         {
             moveEnemy(gamespeed);
             moveline(gamespeed);
+            if(right == true)
+            {
+                player.Left += 5;
+            }
+            if(left == true)
+            {
+                player.Left -= 5;
+            }
         }
 
         private void moveEnemy(int speed)
@@ -74,24 +87,13 @@ namespace CarRacer
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Left)
-            {
-                if(player.Left > 15)
-                {
-                    player.Left -= 10;
-                }
-            }
-            if (e.KeyCode == Keys.Right)
-            {
-                if(player.Right < 350)
-                {
-                    player.Left += 10;
-                }
-            }
-            if(e.KeyCode == Keys.Escape)
-            {
-                this.Close();
-            }
+            if(e.KeyCode == Keys.Right) { right = true; }
+            if(e.KeyCode == Keys.Left) { left = true; }
+        }
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right) { right = false; }
+            if (e.KeyCode == Keys.Left) { left = false; }
         }
     }
 }
