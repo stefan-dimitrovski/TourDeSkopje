@@ -16,7 +16,6 @@ namespace CarRacer
         bool left, right;
 
 
-
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +26,7 @@ namespace CarRacer
         {
             moveEnemy(gamespeed);
             moveline(gamespeed);
+
             if(right == true)
             {
                 player.Left += 5;
