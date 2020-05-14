@@ -14,18 +14,19 @@ namespace CarRacer
     {
 
         bool left, right;
-
+        private int gamespeed = 5;
 
         public Form1()
         {
             InitializeComponent();
         }
-        private int gamespeed = 5;
 
+        //functions called every new interval
         private void timer1_Tick(object sender, EventArgs e)
         {
-            moveEnemy(gamespeed);
-            moveline(gamespeed);
+            moveEnemy(gamespeed);//enemy movement function
+
+            moveline(gamespeed);//road movement function
 
             if(right == true)
             {
@@ -37,6 +38,7 @@ namespace CarRacer
             }
         }
 
+        //enemy move pattern
         private void moveEnemy(int speed)
         {
             if(enemy.Top >= 480)
@@ -49,6 +51,7 @@ namespace CarRacer
             }
         }
 
+        //move lines and restart after leaving screen
         private void moveline(int speed)
         {
             if(pb1.Top >= 480)
@@ -85,6 +88,7 @@ namespace CarRacer
             }
         }
 
+        //move on key down, stop on key up
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Right) { right = true; }
