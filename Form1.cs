@@ -101,6 +101,7 @@ namespace CarRacer
         {
             if(e.KeyCode == Keys.Right) { right = true; }
             if(e.KeyCode == Keys.Left) { left = true; }
+            if(e.KeyCode == Keys.Escape) { this.Close(); }
         }
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
