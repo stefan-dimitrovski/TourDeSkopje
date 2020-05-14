@@ -37,7 +37,8 @@
             this.gameTime = new System.Windows.Forms.Timer(this.components);
             this.pb4 = new System.Windows.Forms.PictureBox();
             this.player = new System.Windows.Forms.PictureBox();
-            this.enemy = new System.Windows.Forms.PictureBox();
+            this.enemy1 = new System.Windows.Forms.PictureBox();
+            this.enemy2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
@@ -45,7 +46,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -117,14 +119,23 @@
             this.player.TabIndex = 6;
             this.player.TabStop = false;
             // 
-            // enemy
+            // enemy1
             // 
-            this.enemy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.enemy.Location = new System.Drawing.Point(269, 34);
-            this.enemy.Name = "enemy";
-            this.enemy.Size = new System.Drawing.Size(33, 41);
-            this.enemy.TabIndex = 7;
-            this.enemy.TabStop = false;
+            this.enemy1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.enemy1.Location = new System.Drawing.Point(269, 34);
+            this.enemy1.Name = "enemy1";
+            this.enemy1.Size = new System.Drawing.Size(33, 41);
+            this.enemy1.TabIndex = 7;
+            this.enemy1.TabStop = false;
+            // 
+            // enemy2
+            // 
+            this.enemy2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.enemy2.Location = new System.Drawing.Point(62, 351);
+            this.enemy2.Name = "enemy2";
+            this.enemy2.Size = new System.Drawing.Size(33, 41);
+            this.enemy2.TabIndex = 8;
+            this.enemy2.TabStop = false;
             // 
             // Form1
             // 
@@ -132,7 +143,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(364, 441);
-            this.Controls.Add(this.enemy);
+            this.Controls.Add(this.enemy2);
+            this.Controls.Add(this.enemy1);
             this.Controls.Add(this.player);
             this.Controls.Add(this.pb4);
             this.Controls.Add(this.pb3);
@@ -154,7 +166,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,7 +182,8 @@
         private System.Windows.Forms.Timer gameTime;
         private System.Windows.Forms.PictureBox pb4;
         private System.Windows.Forms.PictureBox player;
-        private System.Windows.Forms.PictureBox enemy;
+        private System.Windows.Forms.PictureBox enemy1;
+        private System.Windows.Forms.PictureBox enemy2;
     }
 }
 

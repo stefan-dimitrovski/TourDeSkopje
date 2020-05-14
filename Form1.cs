@@ -41,13 +41,21 @@ namespace CarRacer
         //enemy move pattern
         private void moveEnemy(int speed)
         {
-            if(enemy.Top >= 480)
+            if(enemy1.Top >= 480)
             {
-                enemy.Top = -75;
+                enemy1.Top = -75;
             }
             else
             {
-                enemy.Top += speed;
+                enemy1.Top += speed;
+            }
+            if (enemy2.Top >= 480)
+            {
+                enemy2.Top = -75;
+            }
+            else
+            {
+                enemy2.Top += speed;
             }
         }
 
