@@ -10,31 +10,55 @@ using System.Windows.Forms;
 
 namespace CarRacer
 {
-    public partial class Form1 : Form
+    public partial class GameScreen : Form
     {
 
         bool left, right;
         private int gamespeed = 5;
 
-        public Form1()
+        public GameScreen()
         {
             InitializeComponent();
+            
         }
 
         //functions called every new interval
         private void timer1_Tick(object sender, EventArgs e)
         {
+            collision();//check for collision
+
             moveEnemy(gamespeed);//enemy movement function
 
             moveline(gamespeed);//road movement function
+            
+            {
+                if (right == true)
+                {
+                    if (player.Left < 320) //stay in right bound
+                    {
+                        player.Left += 5;
+                    }
+                }
+                if (left == true)
+                {
+                    if (player.Left > 12) // stay in left bound
+                    {
+                        player.Left -= 5;
+                    }
+                }
+            }//player movement rules
+        }
 
-            if(right == true)
+        //collision rules
+        private void collision()
+        {
+            if (player.Bounds.IntersectsWith(enemy1.Bounds))
             {
-                player.Left += 5;
+                gameTime.Enabled = false;
             }
-            if(left == true)
+            if (player.Bounds.IntersectsWith(enemy2.Bounds))
             {
-                player.Left -= 5;
+                gameTime.Enabled = false;
             }
         }
 
@@ -102,6 +126,8 @@ namespace CarRacer
             if(e.KeyCode == Keys.Right) { right = true; }
             if(e.KeyCode == Keys.Left) { left = true; }
             if(e.KeyCode == Keys.Escape) { this.Close(); }
+            
+            
         }
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
