@@ -22,7 +22,6 @@ namespace CarRacer
             GameScreen gs = new GameScreen();
             MainMenu mm = new MainMenu();
             gs.ShowDialog();
-            mm.Close();
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
