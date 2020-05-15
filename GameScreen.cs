@@ -19,7 +19,6 @@ namespace CarRacer
         public GameScreen()
         {
             InitializeComponent();
-            
         }
 
         //functions called every new interval
@@ -48,7 +47,6 @@ namespace CarRacer
                 }
             }//player movement rules
         }
-
         //collision rules
         private void collision()
         {
