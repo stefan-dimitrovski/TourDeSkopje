@@ -1,6 +1,6 @@
 ﻿namespace CarRacer
 {
-    partial class Form1
+    partial class GameScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -36,18 +36,18 @@
             this.pb3 = new System.Windows.Forms.PictureBox();
             this.gameTime = new System.Windows.Forms.Timer(this.components);
             this.pb4 = new System.Windows.Forms.PictureBox();
-            this.player = new System.Windows.Forms.PictureBox();
             this.enemy1 = new System.Windows.Forms.PictureBox();
             this.enemy2 = new System.Windows.Forms.PictureBox();
+            this.player = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -110,32 +110,38 @@
             this.pb4.TabIndex = 5;
             this.pb4.TabStop = false;
             // 
-            // player
-            // 
-            this.player.BackColor = System.Drawing.Color.Black;
-            this.player.Location = new System.Drawing.Point(269, 331);
-            this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(33, 41);
-            this.player.TabIndex = 6;
-            this.player.TabStop = false;
-            // 
             // enemy1
             // 
-            this.enemy1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.enemy1.BackColor = System.Drawing.Color.Transparent;
+            this.enemy1.Image = global::CarRacer.Properties.Resources.car2;
             this.enemy1.Location = new System.Drawing.Point(269, 34);
             this.enemy1.Name = "enemy1";
-            this.enemy1.Size = new System.Drawing.Size(33, 41);
+            this.enemy1.Size = new System.Drawing.Size(37, 68);
+            this.enemy1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.enemy1.TabIndex = 7;
             this.enemy1.TabStop = false;
             // 
             // enemy2
             // 
-            this.enemy2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.enemy2.BackColor = System.Drawing.Color.Transparent;
+            this.enemy2.Image = global::CarRacer.Properties.Resources.car2;
             this.enemy2.Location = new System.Drawing.Point(62, 351);
             this.enemy2.Name = "enemy2";
-            this.enemy2.Size = new System.Drawing.Size(33, 41);
+            this.enemy2.Size = new System.Drawing.Size(37, 68);
+            this.enemy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.enemy2.TabIndex = 8;
             this.enemy2.TabStop = false;
+            // 
+            // player
+            // 
+            this.player.BackColor = System.Drawing.Color.Transparent;
+            this.player.Image = global::CarRacer.Properties.Resources.car6;
+            this.player.Location = new System.Drawing.Point(257, 336);
+            this.player.Name = "player";
+            this.player.Size = new System.Drawing.Size(37, 68);
+            this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.player.TabIndex = 9;
+            this.player.TabStop = false;
             // 
             // Form1
             // 
@@ -143,9 +149,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(364, 441);
+            this.Controls.Add(this.player);
             this.Controls.Add(this.enemy2);
             this.Controls.Add(this.enemy1);
-            this.Controls.Add(this.player);
             this.Controls.Add(this.pb4);
             this.Controls.Add(this.pb3);
             this.Controls.Add(this.pb2);
@@ -165,9 +171,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,9 +187,9 @@
         private System.Windows.Forms.PictureBox pb3;
         private System.Windows.Forms.Timer gameTime;
         private System.Windows.Forms.PictureBox pb4;
-        private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.PictureBox enemy1;
         private System.Windows.Forms.PictureBox enemy2;
+        private System.Windows.Forms.PictureBox player;
     }
 }
 
