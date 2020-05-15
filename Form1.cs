@@ -30,11 +30,17 @@ namespace CarRacer
 
             if(right == true)
             {
-                player.Left += 5;
+                if(player.Left < 320) //stay in right bound
+                {
+                    player.Left += 5;
+                }
             }
             if(left == true)
             {
-                player.Left -= 5;
+                if (player.Left > 12) // stay in left bound
+                {
+                    player.Left -= 5;
+                }
             }
         }
 
