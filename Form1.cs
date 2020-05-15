@@ -24,23 +24,40 @@ namespace CarRacer
         //functions called every new interval
         private void timer1_Tick(object sender, EventArgs e)
         {
+            collision();//check for collision
+
             moveEnemy(gamespeed);//enemy movement function
 
             moveline(gamespeed);//road movement function
+            
+            {
+                if (right == true)
+                {
+                    if (player.Left < 320) //stay in right bound
+                    {
+                        player.Left += 5;
+                    }
+                }
+                if (left == true)
+                {
+                    if (player.Left > 12) // stay in left bound
+                    {
+                        player.Left -= 5;
+                    }
+                }
+            }//player movement rules
+        }
 
-            if(right == true)
+        //collision rules
+        private void collision()
+        {
+            if (player.Bounds.IntersectsWith(enemy1.Bounds))
             {
-                if(player.Left < 320) //stay in right bound
-                {
-                    player.Left += 5;
-                }
+                gameTime.Enabled = false;
             }
-            if(left == true)
+            if (player.Bounds.IntersectsWith(enemy2.Bounds))
             {
-                if (player.Left > 12) // stay in left bound
-                {
-                    player.Left -= 5;
-                }
+                gameTime.Enabled = false;
             }
         }
 
