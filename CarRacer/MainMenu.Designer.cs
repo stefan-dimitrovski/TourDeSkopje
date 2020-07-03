@@ -33,6 +33,7 @@
             this.btnNewGame = new System.Windows.Forms.Button();
             this.btnHighScore = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
+            this.btnHowToPlay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // 
             // btnHighScore
             // 
-            this.btnHighScore.Location = new System.Drawing.Point(113, 314);
+            this.btnHighScore.Location = new System.Drawing.Point(113, 366);
             this.btnHighScore.Name = "btnHighScore";
             this.btnHighScore.Size = new System.Drawing.Size(204, 46);
             this.btnHighScore.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(113, 366);
+            this.btnQuit.Location = new System.Drawing.Point(113, 419);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(204, 46);
             this.btnQuit.TabIndex = 3;
@@ -75,11 +76,21 @@
             this.btnQuit.UseVisualStyleBackColor = true;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
+            // btnHowToPlay
+            // 
+            this.btnHowToPlay.Location = new System.Drawing.Point(113, 314);
+            this.btnHowToPlay.Name = "btnHowToPlay";
+            this.btnHowToPlay.Size = new System.Drawing.Size(204, 46);
+            this.btnHowToPlay.TabIndex = 4;
+            this.btnHowToPlay.Text = "Instructions";
+            this.btnHowToPlay.UseVisualStyleBackColor = true;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 422);
+            this.ClientSize = new System.Drawing.Size(439, 477);
+            this.Controls.Add(this.btnHowToPlay);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnHighScore);
             this.Controls.Add(this.btnNewGame);
@@ -98,5 +109,6 @@
         private System.Windows.Forms.Button btnNewGame;
         private System.Windows.Forms.Button btnHighScore;
         private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.Button btnHowToPlay;
     }
 }
