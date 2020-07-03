@@ -29,23 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNewGame = new System.Windows.Forms.Button();
             this.btnHighScore = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.btnHowToPlay = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-5, -5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(448, 261);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // btnNewGame
             // 
@@ -65,6 +55,7 @@
             this.btnHighScore.TabIndex = 2;
             this.btnHighScore.Text = "High Score";
             this.btnHighScore.UseVisualStyleBackColor = true;
+            this.btnHighScore.Click += new System.EventHandler(this.btnHighScore_Click);
             // 
             // btnQuit
             // 
@@ -85,6 +76,16 @@
             this.btnHowToPlay.Text = "Instructions";
             this.btnHowToPlay.UseVisualStyleBackColor = true;
             this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-5, -5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(448, 261);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // MainMenu
             // 

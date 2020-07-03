@@ -34,5 +34,11 @@ namespace CarRacer
             HowToPlay hp = new HowToPlay();
             hp.ShowDialog();
         }
+
+        private void btnHighScore_Click(object sender, EventArgs e)
+        {
+            HighScore hs = new HighScore();
+            hs.ShowDialog();
+        }
     }
 }
