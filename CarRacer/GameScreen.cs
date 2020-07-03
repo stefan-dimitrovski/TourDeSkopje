@@ -29,9 +29,7 @@ namespace CarRacer
             collision();//check for collision
 
             this.lblTime.Text = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
-
-
-            
+    
 
             moveEnemy(gamespeed);//enemy movement function
 
@@ -130,9 +128,7 @@ namespace CarRacer
         {
             if(e.KeyCode == Keys.Right) { right = true; }
             if(e.KeyCode == Keys.Left) { left = true; }
-            if(e.KeyCode == Keys.Escape) { this.Close(); }
-            
-            
+            if(e.KeyCode == Keys.Escape) { this.Close(); }                      
         }
 
 
