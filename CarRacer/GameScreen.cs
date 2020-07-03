@@ -15,7 +15,7 @@ namespace CarRacer
     {
 
         bool left, right;
-        private int gamespeed = 5;
+        private int gamespeed = 4;
         private Stopwatch stopwatch;
 
         public GameScreen()
@@ -29,6 +29,9 @@ namespace CarRacer
             collision();//check for collision
 
             this.lblTime.Text = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
+
+
+            
 
             moveEnemy(gamespeed);//enemy movement function
 
@@ -137,6 +140,16 @@ namespace CarRacer
         {
             stopwatch = new Stopwatch();
             stopwatch.Start();
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            Console.WriteLine(Math.Floor(stopwatch.Elapsed.TotalSeconds));
+
+            if (Math.Floor(stopwatch.Elapsed.TotalSeconds) % 30 == 0)
+            {
+                gamespeed +=1;
+            }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
