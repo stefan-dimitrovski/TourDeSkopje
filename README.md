@@ -1,2 +1,2 @@
-# CarRacer
- simple C# game
+# Tour De Skopje
+ Едноставна имплементација на класичните тркачки игри
