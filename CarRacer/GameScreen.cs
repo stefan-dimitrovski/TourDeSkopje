@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,8 @@ namespace CarRacer
     {
 
         bool left, right;
-        private int gamespeed = 5;
+        private int gamespeed = 4;
+        private Stopwatch stopwatch;
 
         public GameScreen()
         {
@@ -25,6 +27,11 @@ namespace CarRacer
         private void timer1_Tick(object sender, EventArgs e)
         {
             collision();//check for collision
+
+            this.lblTime.Text = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
+
+
+            
 
             moveEnemy(gamespeed);//enemy movement function
 
@@ -127,6 +134,24 @@ namespace CarRacer
             
             
         }
+
+
+        private void GameScreen_Load(object sender, EventArgs e)
+        {
+            stopwatch = new Stopwatch();
+            stopwatch.Start();
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            Console.WriteLine(Math.Floor(stopwatch.Elapsed.TotalSeconds));
+
+            if (Math.Floor(stopwatch.Elapsed.TotalSeconds) % 30 == 0)
+            {
+                gamespeed +=1;
+            }
+        }
+
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Right) { right = false; }
