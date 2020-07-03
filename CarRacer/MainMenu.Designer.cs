@@ -84,6 +84,7 @@
             this.btnHowToPlay.TabIndex = 4;
             this.btnHowToPlay.Text = "Instructions";
             this.btnHowToPlay.UseVisualStyleBackColor = true;
+            this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
             // 
             // MainMenu
             // 
