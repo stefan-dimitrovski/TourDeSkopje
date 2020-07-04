@@ -159,6 +159,7 @@ namespace CarRacer
         //Increase speed every 30 seconds
         private void timerSpeedUp_Tick(object sender, EventArgs e)
         {
+
             //Console.WriteLine(Math.Floor(stopwatch.Elapsed.TotalSeconds));
 
             if (Math.Floor(stopwatch.Elapsed.TotalSeconds) % 30 == 0)
@@ -198,6 +199,34 @@ namespace CarRacer
             }
         }
 
+        private void timer321_Tick(object sender, EventArgs e)
+        {
+            switch (Math.Floor(stopwatch.Elapsed.TotalSeconds))
+            {
+                case 0:
+                    lbl321.Text = "3";
+                    break;
+                case 1:
+                    lbl321.Text = "2";
+                    break;
+                case 2:
+                    lbl321.Text = "1";
+                    break;
+                case 3:
+                    lbl321.Font = new Font("Arial", 100, FontStyle.Bold);
+                    lbl321.ForeColor = Color.Red;
+                    lbl321.Text = "GO";
+                    break;
+                case 4:
+                    stopwatch.Restart();
+                    lblTime.Visible = true;
+                    gameTime.Enabled = true;
+                    lbl321.Visible = false;
+                    timer321.Stop();
+                    break;
+            }
+        }
+        
         //bounds for player staying in screen
         private void playerRules()
         {
