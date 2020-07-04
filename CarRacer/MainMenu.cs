@@ -28,5 +28,17 @@ namespace CarRacer
         {
             this.Close();
         }
+
+        private void btnHowToPlay_Click(object sender, EventArgs e)
+        {
+            HowToPlay hp = new HowToPlay();
+            hp.ShowDialog();
+        }
+
+        private void btnHighScore_Click(object sender, EventArgs e)
+        {
+            HighScore hs = new HighScore();
+            hs.ShowDialog();
+        }
     }
 }
