@@ -13,6 +13,7 @@ namespace CarRacer
 {
     public partial class GameScreen : Form
     {
+        //car types list
         Bitmap[] colors =
         {
             Properties.Resources.car1,
@@ -82,7 +83,7 @@ namespace CarRacer
             }          
         }
 
-        //enemy move pattern
+        //enemy move pattern and color changer
         private void moveEnemy(int speed)
         {
             if(enemy1.Top >= 480)
