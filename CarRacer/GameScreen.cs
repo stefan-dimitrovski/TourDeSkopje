@@ -32,6 +32,7 @@ namespace CarRacer
 
             this.lblTime.Text = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
 
+
             if (enemy1.Enabled == false)
             {
                 if (Math.Floor(stopwatch.Elapsed.TotalSeconds) >= 0 && enemy1.Top == -75)
@@ -58,8 +59,7 @@ namespace CarRacer
                     enemy3.Visible = true;
                 }
             }
-            
-
+         
 
             moveEnemy(gamespeed);//enemy movement function
 
@@ -191,6 +191,9 @@ namespace CarRacer
             if(e.KeyCode == Keys.Left) { left = true; }
             if(e.KeyCode == Keys.Escape) { this.Close(); }
    
+
+           // if(e.KeyCode == Keys.Escape) { this.Close(); }                      
+
         }
 
 
