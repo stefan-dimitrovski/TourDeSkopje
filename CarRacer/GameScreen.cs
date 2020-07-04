@@ -13,12 +13,10 @@ namespace CarRacer
 {
     public partial class GameScreen : Form
     {
-
         bool left, right;
         private int gamespeed = 4;
         private Stopwatch stopwatch;
         Random rnd = new Random();
-
 
         public GameScreen()
         {
@@ -26,62 +24,22 @@ namespace CarRacer
         }
 
         //functions called every new interval
-        private void timer1_Tick(object sender, EventArgs e)
+        private void gameSpeed_Tick(object sender, EventArgs e)
         {
-            collision();//check for collision
+            this.lblTime.Text = string.Format("{0:mm\\:ss}", stopwatch.Elapsed); //Time format for highscore
 
-            this.lblTime.Text = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
+            collision();//check for collision         
 
-
-            if (enemy1.Enabled == false)
-            {
-                if (Math.Floor(stopwatch.Elapsed.TotalSeconds) >= 0 && enemy1.Top == -75)
-                {
-                    enemy1.Enabled = true;
-                    enemy1.Visible = true;
-                }
-            }
-            if (enemy2.Enabled == false)
-            {
-                if (Math.Floor(stopwatch.Elapsed.TotalSeconds) >= 5 && enemy1.Top == -75)
-                {
-                    enemy2.Top = -262;
-                    enemy2.Enabled = true;
-                    enemy2.Visible = true;
-                }
-            }
-            if (enemy3.Enabled == false)
-            {
-                if (Math.Floor(stopwatch.Elapsed.TotalSeconds) >= 10 && enemy2.Top == -75)
-                {
-                    enemy3.Top = -262;
-                    enemy3.Enabled = true;
-                    enemy3.Visible = true;
-                }
-            }
-         
+            spawnEnemy();//spawn random locations for enemy cars
 
             moveEnemy(gamespeed);//enemy movement function
 
             moveline(gamespeed);//road movement function
-            
-            {
-                if (right == true)
-                {
-                    if (player.Left < 320) //stay in right bound
-                    {
-                        player.Left += 7;
-                    }
-                }
-                if (left == true)
-                {
-                    if (player.Left > 12) // stay in left bound
-                    {
-                        player.Left -= 7;
-                    }
-                }
-            }//player movement rules
+
+            playerRules();//player movement rules
         }
+
+
         //collision rules
         private void collision()
         {
@@ -89,37 +47,32 @@ namespace CarRacer
             {
                 if (player.Bounds.IntersectsWith(enemy1.Bounds))
                 {
-                    gameTime.Enabled = false;
+                    gameTime.Enabled = false;                   
                 }
             }
             if (enemy2.Enabled == true)
             {
                 if (player.Bounds.IntersectsWith(enemy2.Bounds))
                 {
-                    gameTime.Enabled = false;
+                    gameTime.Enabled = false;                   
                 }
             }
             if (enemy3.Enabled == true)
             {
                 if (player.Bounds.IntersectsWith(enemy3.Bounds))
                 {
-                    gameTime.Enabled = false;
+                    gameTime.Enabled = false;                   
                 }
-            }
-            
-
+            }          
         }
 
         //enemy move pattern
         private void moveEnemy(int speed)
         {
-
-
             if(enemy1.Top >= 480)
             {
                 enemy1.Top = -75;
-                enemy1.Left = rnd.Next(0, 320);
-
+                enemy1.Left = rnd.Next(12, 320);
             }
             else
             {
@@ -128,7 +81,7 @@ namespace CarRacer
             if (enemy2.Top >= 480)
             {
                 enemy2.Top = -75;
-                enemy2.Left=rnd.Next(0, 320);
+                enemy2.Left=rnd.Next(12, 320);
             }
             else
             {
@@ -138,13 +91,12 @@ namespace CarRacer
             if (enemy3.Top >= 480)
             {
                 enemy3.Top = -75;
-                enemy3.Left = rnd.Next(0, 320);
+                enemy3.Left = rnd.Next(12, 320);
             }
             else
             {
                 enemy3.Top += speed;
-            }
-            
+            }    
         }
 
         //move lines and restart after leaving screen
@@ -184,18 +136,19 @@ namespace CarRacer
             }
         }
 
-        //move on key down, stop on key up
+        //move on key down
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Right) { right = true; }
             if(e.KeyCode == Keys.Left) { left = true; }
-            if(e.KeyCode == Keys.Escape) { this.Close(); }
-   
-
-           // if(e.KeyCode == Keys.Escape) { this.Close(); }                      
-
+            if(e.KeyCode == Keys.Escape) { this.Close(); }                    
         }
-
+        //stop on key up
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right) { right = false; }
+            if (e.KeyCode == Keys.Left) { left = false; }
+        }
 
         private void GameScreen_Load(object sender, EventArgs e)
         {
@@ -203,21 +156,65 @@ namespace CarRacer
             stopwatch.Start();
         }
 
-        private void timer1_Tick_1(object sender, EventArgs e)
+        //Increase speed every 30 seconds
+        private void timerSpeedUp_Tick(object sender, EventArgs e)
         {
-            Console.WriteLine(Math.Floor(stopwatch.Elapsed.TotalSeconds));
+            //Console.WriteLine(Math.Floor(stopwatch.Elapsed.TotalSeconds));
 
             if (Math.Floor(stopwatch.Elapsed.TotalSeconds) % 30 == 0)
             {
                 gamespeed +=1;
             }
-
+        } 
+        
+        //random spawn location for enemies
+        private void spawnEnemy()
+        {
+            if (enemy1.Enabled == false)
+            {
+                if (Math.Floor(stopwatch.Elapsed.TotalSeconds) >= 0 && enemy1.Top == -75)
+                {
+                    enemy1.Enabled = true;
+                    enemy1.Visible = true;
+                }
+            }
+            if (enemy2.Enabled == false)
+            {
+                if (Math.Floor(stopwatch.Elapsed.TotalSeconds) >= 5 && enemy1.Top == -75)
+                {
+                    enemy2.Top = -262;
+                    enemy2.Enabled = true;
+                    enemy2.Visible = true;
+                }
+            }
+            if (enemy3.Enabled == false)
+            {
+                if (Math.Floor(stopwatch.Elapsed.TotalSeconds) >= 10 && enemy2.Top == -75)
+                {
+                    enemy3.Top = -262;
+                    enemy3.Enabled = true;
+                    enemy3.Visible = true;
+                }
+            }
         }
 
-        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        //bounds for player staying in screen
+        private void playerRules()
         {
-            if (e.KeyCode == Keys.Right) { right = false; }
-            if (e.KeyCode == Keys.Left) { left = false; }
+            if (right == true)
+            {
+                if (player.Left < 320) //stay in right bound
+                {
+                    player.Left += 7;
+                }
+            }
+            if (left == true)
+            {
+                if (player.Left > 12) // stay in left bound
+                {
+                    player.Left -= 7;
+                }
+            }
         }
     }
 }

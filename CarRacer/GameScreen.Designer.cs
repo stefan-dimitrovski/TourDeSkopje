@@ -40,7 +40,7 @@
             this.enemy2 = new System.Windows.Forms.PictureBox();
             this.player = new System.Windows.Forms.PictureBox();
             this.lblTime = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerSpeedUp = new System.Windows.Forms.Timer(this.components);
             this.enemy3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -103,7 +103,7 @@
             // 
             this.gameTime.Enabled = true;
             this.gameTime.Interval = 1;
-            this.gameTime.Tick += new System.EventHandler(this.timer1_Tick);
+            this.gameTime.Tick += new System.EventHandler(this.gameSpeed_Tick);
             // 
             // pb4
             // 
@@ -162,11 +162,11 @@
             this.lblTime.TabIndex = 10;
             this.lblTime.Text = "00:00";
             // 
-            // timer1
+            // timerSpeedUp
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            this.timerSpeedUp.Enabled = true;
+            this.timerSpeedUp.Interval = 1000;
+            this.timerSpeedUp.Tick += new System.EventHandler(this.timerSpeedUp_Tick);
             // 
             // enemy3
             // 
@@ -234,7 +234,7 @@
         private System.Windows.Forms.PictureBox enemy2;
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerSpeedUp;
         private System.Windows.Forms.PictureBox enemy3;
     }
 }
