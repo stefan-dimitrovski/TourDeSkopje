@@ -17,6 +17,8 @@ namespace CarRacer
         bool left, right;
         private int gamespeed = 4;
         private Stopwatch stopwatch;
+        Random rnd = new Random();
+
 
         public GameScreen()
         {
@@ -29,7 +31,35 @@ namespace CarRacer
             collision();//check for collision
 
             this.lblTime.Text = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
-    
+
+
+            if (enemy1.Enabled == false)
+            {
+                if (Math.Floor(stopwatch.Elapsed.TotalSeconds) >= 0 && enemy1.Top == -75)
+                {
+                    enemy1.Enabled = true;
+                    enemy1.Visible = true;
+                }
+            }
+            if (enemy2.Enabled == false)
+            {
+                if (Math.Floor(stopwatch.Elapsed.TotalSeconds) >= 5 && enemy1.Top == -75)
+                {
+                    enemy2.Top = -262;
+                    enemy2.Enabled = true;
+                    enemy2.Visible = true;
+                }
+            }
+            if (enemy3.Enabled == false)
+            {
+                if (Math.Floor(stopwatch.Elapsed.TotalSeconds) >= 10 && enemy2.Top == -75)
+                {
+                    enemy3.Top = -262;
+                    enemy3.Enabled = true;
+                    enemy3.Visible = true;
+                }
+            }
+         
 
             moveEnemy(gamespeed);//enemy movement function
 
@@ -40,14 +70,14 @@ namespace CarRacer
                 {
                     if (player.Left < 320) //stay in right bound
                     {
-                        player.Left += 5;
+                        player.Left += 7;
                     }
                 }
                 if (left == true)
                 {
                     if (player.Left > 12) // stay in left bound
                     {
-                        player.Left -= 5;
+                        player.Left -= 7;
                     }
                 }
             }//player movement rules
@@ -55,22 +85,41 @@ namespace CarRacer
         //collision rules
         private void collision()
         {
-            if (player.Bounds.IntersectsWith(enemy1.Bounds))
+            if (enemy1.Enabled == true)
             {
-                gameTime.Enabled = false;
+                if (player.Bounds.IntersectsWith(enemy1.Bounds))
+                {
+                    gameTime.Enabled = false;
+                }
             }
-            if (player.Bounds.IntersectsWith(enemy2.Bounds))
+            if (enemy2.Enabled == true)
             {
-                gameTime.Enabled = false;
+                if (player.Bounds.IntersectsWith(enemy2.Bounds))
+                {
+                    gameTime.Enabled = false;
+                }
             }
+            if (enemy3.Enabled == true)
+            {
+                if (player.Bounds.IntersectsWith(enemy3.Bounds))
+                {
+                    gameTime.Enabled = false;
+                }
+            }
+            
+
         }
 
         //enemy move pattern
         private void moveEnemy(int speed)
         {
+
+
             if(enemy1.Top >= 480)
             {
                 enemy1.Top = -75;
+                enemy1.Left = rnd.Next(0, 320);
+
             }
             else
             {
@@ -79,11 +128,23 @@ namespace CarRacer
             if (enemy2.Top >= 480)
             {
                 enemy2.Top = -75;
+                enemy2.Left=rnd.Next(0, 320);
             }
             else
             {
                 enemy2.Top += speed;
             }
+
+            if (enemy3.Top >= 480)
+            {
+                enemy3.Top = -75;
+                enemy3.Left = rnd.Next(0, 320);
+            }
+            else
+            {
+                enemy3.Top += speed;
+            }
+            
         }
 
         //move lines and restart after leaving screen
@@ -128,7 +189,11 @@ namespace CarRacer
         {
             if(e.KeyCode == Keys.Right) { right = true; }
             if(e.KeyCode == Keys.Left) { left = true; }
-            if(e.KeyCode == Keys.Escape) { this.Close(); }                      
+            if(e.KeyCode == Keys.Escape) { this.Close(); }
+   
+
+           // if(e.KeyCode == Keys.Escape) { this.Close(); }                      
+
         }
 
 
@@ -146,6 +211,7 @@ namespace CarRacer
             {
                 gamespeed +=1;
             }
+
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
