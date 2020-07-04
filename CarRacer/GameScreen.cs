@@ -13,6 +13,15 @@ namespace CarRacer
 {
     public partial class GameScreen : Form
     {
+        Bitmap[] colors =
+        {
+            Properties.Resources.car1,
+            Properties.Resources.car2,
+            Properties.Resources.car3,
+            Properties.Resources.car4,
+            Properties.Resources.car5
+        };
+
         bool left, right;
         private int gamespeed = 4;
         private Stopwatch stopwatch;
@@ -80,6 +89,7 @@ namespace CarRacer
             {
                 enemy1.Top = -75;
                 enemy1.Left = rnd.Next(12, 320);
+                enemy1.Image = colors[rnd.Next(0, 5)];
             }
             else
             {
@@ -89,6 +99,7 @@ namespace CarRacer
             {
                 enemy2.Top = -75;
                 enemy2.Left=rnd.Next(12, 320);
+                enemy2.Image = colors[rnd.Next(0, 5)];
             }
             else
             {
@@ -99,6 +110,7 @@ namespace CarRacer
             {
                 enemy3.Top = -75;
                 enemy3.Left = rnd.Next(12, 320);
+                enemy3.Image = colors[rnd.Next(0, 5)];
             }
             else
             {
