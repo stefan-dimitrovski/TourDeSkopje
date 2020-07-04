@@ -32,6 +32,8 @@ namespace CarRacer
 
             this.lblTime.Text = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
 
+
+
             if (enemy1.Enabled == false)
             {
                 if (Math.Floor(stopwatch.Elapsed.TotalSeconds) >= 0 && enemy1.Top == -75)
@@ -190,7 +192,7 @@ namespace CarRacer
             if(e.KeyCode == Keys.Right) { right = true; }
             if(e.KeyCode == Keys.Left) { left = true; }
             if(e.KeyCode == Keys.Escape) { this.Close(); }
-   
+
         }
 
 
@@ -202,13 +204,39 @@ namespace CarRacer
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            Console.WriteLine(Math.Floor(stopwatch.Elapsed.TotalSeconds));
-
             if (Math.Floor(stopwatch.Elapsed.TotalSeconds) % 30 == 0)
             {
                 gamespeed +=1;
             }
 
+        }
+
+        private void timer321_Tick(object sender, EventArgs e)
+        {
+            switch (Math.Floor(stopwatch.Elapsed.TotalSeconds))
+            {
+                case 0:
+                    lbl321.Text = "3";
+                    break;
+                case 1:
+                    lbl321.Text = "2";
+                    break;
+                case 2:
+                    lbl321.Text = "1";
+                    break;
+                case 3:
+                    lbl321.Font = new Font("Arial", 100, FontStyle.Bold);
+                    lbl321.ForeColor = Color.Red;
+                    lbl321.Text = "GO";
+                    break;
+                case 4:
+                    stopwatch.Restart();
+                    lblTime.Visible = true;
+                    gameTime.Enabled = true;
+                    lbl321.Visible = false;
+                    timer321.Stop();
+                    break;
+            }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)

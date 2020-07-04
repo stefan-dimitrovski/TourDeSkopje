@@ -42,6 +42,8 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.enemy3 = new System.Windows.Forms.PictureBox();
+            this.lbl321 = new System.Windows.Forms.Label();
+            this.timer321 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
@@ -101,7 +103,6 @@
             // 
             // gameTime
             // 
-            this.gameTime.Enabled = true;
             this.gameTime.Interval = 1;
             this.gameTime.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -161,6 +162,7 @@
             this.lblTime.Size = new System.Drawing.Size(66, 25);
             this.lblTime.TabIndex = 10;
             this.lblTime.Text = "00:00";
+            this.lblTime.Visible = false;
             // 
             // timer1
             // 
@@ -181,12 +183,31 @@
             this.enemy3.TabStop = false;
             this.enemy3.Visible = false;
             // 
+            // lbl321
+            // 
+            this.lbl321.BackColor = System.Drawing.Color.Transparent;
+            this.lbl321.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl321.Font = new System.Drawing.Font("Microsoft Sans Serif", 150F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl321.Location = new System.Drawing.Point(45, 47);
+            this.lbl321.Name = "lbl321";
+            this.lbl321.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl321.Size = new System.Drawing.Size(280, 280);
+            this.lbl321.TabIndex = 12;
+            this.lbl321.Text = "GO";
+            this.lbl321.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer321
+            // 
+            this.timer321.Enabled = true;
+            this.timer321.Tick += new System.EventHandler(this.timer321_Tick);
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(364, 441);
+            this.Controls.Add(this.lbl321);
             this.Controls.Add(this.enemy3);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.player);
@@ -236,6 +257,8 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox enemy3;
+        private System.Windows.Forms.Label lbl321;
+        private System.Windows.Forms.Timer timer321;
     }
 }
 
