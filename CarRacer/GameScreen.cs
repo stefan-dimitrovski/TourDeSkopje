@@ -23,6 +23,13 @@ namespace CarRacer
             InitializeComponent();
         }
 
+        //on gamescreen start do this
+        private void GameScreen_Load(object sender, EventArgs e)
+        {
+            stopwatch = new Stopwatch();
+            stopwatch.Start();
+        }
+
         //functions called every new interval
         private void gameSpeed_Tick(object sender, EventArgs e)
         {
@@ -150,12 +157,6 @@ namespace CarRacer
             if (e.KeyCode == Keys.Left) { left = false; }
         }
 
-        private void GameScreen_Load(object sender, EventArgs e)
-        {
-            stopwatch = new Stopwatch();
-            stopwatch.Start();
-        }
-
         //Increase speed every 30 seconds
         private void timerSpeedUp_Tick(object sender, EventArgs e)
         {
@@ -199,6 +200,7 @@ namespace CarRacer
             }
         }
 
+        //start timer before game run
         private void timer321_Tick(object sender, EventArgs e)
         {
             switch (Math.Floor(stopwatch.Elapsed.TotalSeconds))

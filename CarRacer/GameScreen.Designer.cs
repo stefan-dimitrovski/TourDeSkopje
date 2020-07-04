@@ -193,7 +193,7 @@
             this.lbl321.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl321.Size = new System.Drawing.Size(280, 280);
             this.lbl321.TabIndex = 12;
-            this.lbl321.Text = "GO";
+            this.lbl321.Text = "3";
             this.lbl321.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer321
