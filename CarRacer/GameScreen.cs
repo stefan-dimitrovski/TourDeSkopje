@@ -244,7 +244,7 @@ namespace CarRacer
                     gameTime.Enabled = true;
                     lbl321.Visible = false;
                     timer321.Stop();
-                    carengine.Play();
+                    carengine.PlayLooping();
                     break;
             }
         }
