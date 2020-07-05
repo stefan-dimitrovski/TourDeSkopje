@@ -91,7 +91,7 @@ namespace CarRacer
                 enemy1.Top = -75;
                 enemy1.Image = colors[rnd.Next(0, 5)];
 
-                if (enemy2.Enabled == false && enemy3.Enabled == false)
+                if (enemy2.Enabled == false)
                     enemy1.Left = rnd.Next(18, 310);
                 else if (enemy3.Enabled == false)
                     enemy1.Left = rnd.Next(18, 146);
