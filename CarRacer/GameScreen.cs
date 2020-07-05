@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace CarRacer
 {
     public partial class GameScreen : Form
     {
+        SoundPlayer carengine = new SoundPlayer(Properties.Resources.car_engine);
         //car types list
         Bitmap[] colors =
         {
@@ -38,6 +40,7 @@ namespace CarRacer
         {
             stopwatch = new Stopwatch();
             stopwatch.Start();
+            
         }
 
         //functions called every new interval
@@ -64,21 +67,24 @@ namespace CarRacer
             {
                 if (player.Bounds.IntersectsWith(enemy1.Bounds))
                 {
-                    gameTime.Enabled = false;                   
+                    gameTime.Enabled = false;
+                    carengine.Stop();
                 }
             }
             if (enemy2.Enabled == true)
             {
                 if (player.Bounds.IntersectsWith(enemy2.Bounds))
                 {
-                    gameTime.Enabled = false;                   
+                    gameTime.Enabled = false;
+                    carengine.Stop();
                 }
             }
             if (enemy3.Enabled == true)
             {
                 if (player.Bounds.IntersectsWith(enemy3.Bounds))
                 {
-                    gameTime.Enabled = false;                   
+                    gameTime.Enabled = false;
+                    carengine.Stop();
                 }
             }          
         }
@@ -238,6 +244,7 @@ namespace CarRacer
                     gameTime.Enabled = true;
                     lbl321.Visible = false;
                     timer321.Stop();
+                    carengine.Play();
                     break;
             }
         }
