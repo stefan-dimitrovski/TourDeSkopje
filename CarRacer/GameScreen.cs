@@ -13,6 +13,16 @@ namespace CarRacer
 {
     public partial class GameScreen : Form
     {
+        //car types list
+        Bitmap[] colors =
+        {
+            Properties.Resources.car1,
+            Properties.Resources.car2,
+            Properties.Resources.car3,
+            Properties.Resources.car4,
+            Properties.Resources.car5
+        };
+
         bool left, right;
         private int gamespeed = 4;
         private Stopwatch stopwatch;
@@ -21,6 +31,13 @@ namespace CarRacer
         public GameScreen()
         {
             InitializeComponent();
+        }
+
+        //on gamescreen start do this
+        private void GameScreen_Load(object sender, EventArgs e)
+        {
+            stopwatch = new Stopwatch();
+            stopwatch.Start();
         }
 
         //functions called every new interval
@@ -66,13 +83,14 @@ namespace CarRacer
             }          
         }
 
-        //enemy move pattern
+        //enemy move pattern and color changer
         private void moveEnemy(int speed)
         {
             if(enemy1.Top >= 480)
             {
                 enemy1.Top = -75;
                 enemy1.Left = rnd.Next(12, 320);
+                enemy1.Image = colors[rnd.Next(0, 5)];
             }
             else
             {
@@ -82,6 +100,7 @@ namespace CarRacer
             {
                 enemy2.Top = -75;
                 enemy2.Left=rnd.Next(12, 320);
+                enemy2.Image = colors[rnd.Next(0, 5)];
             }
             else
             {
@@ -92,6 +111,7 @@ namespace CarRacer
             {
                 enemy3.Top = -75;
                 enemy3.Left = rnd.Next(12, 320);
+                enemy3.Image = colors[rnd.Next(0, 5)];
             }
             else
             {
@@ -150,12 +170,6 @@ namespace CarRacer
             if (e.KeyCode == Keys.Left) { left = false; }
         }
 
-        private void GameScreen_Load(object sender, EventArgs e)
-        {
-            stopwatch = new Stopwatch();
-            stopwatch.Start();
-        }
-
         //Increase speed every 30 seconds
         private void timerSpeedUp_Tick(object sender, EventArgs e)
         {
@@ -199,6 +213,7 @@ namespace CarRacer
             }
         }
 
+        //start timer before game run
         private void timer321_Tick(object sender, EventArgs e)
         {
             switch (Math.Floor(stopwatch.Elapsed.TotalSeconds))
