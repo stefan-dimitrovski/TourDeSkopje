@@ -14,6 +14,8 @@ namespace CarRacer
 {
     public partial class GameScreen : Form
     {
+        public string hs { get; set; }
+
         SoundPlayer carengine = new SoundPlayer(Properties.Resources.car_engine);
 
         //car types list
@@ -70,6 +72,9 @@ namespace CarRacer
                 {
                     gameTime.Enabled = false;
                     carengine.Stop();
+                    hs = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
+                    DialogResult = DialogResult.OK;
+
                 }
             }
             if (enemy2.Enabled == true)
@@ -78,6 +83,8 @@ namespace CarRacer
                 {
                     gameTime.Enabled = false;
                     carengine.Stop();
+                    hs = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
+                    DialogResult = DialogResult.OK;
                 }
             }
             if (enemy3.Enabled == true)
@@ -86,6 +93,8 @@ namespace CarRacer
                 {
                     gameTime.Enabled = false;
                     carengine.Stop();
+                    hs = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
+                    DialogResult = DialogResult.OK;
                 }
             }          
         }
@@ -171,6 +180,7 @@ namespace CarRacer
             if(e.KeyCode == Keys.Escape)
             {
                 carengine.Stop();
+                DialogResult = DialogResult.Cancel;
                 this.Close(); 
             }                    
         }
@@ -253,7 +263,12 @@ namespace CarRacer
                     break;
             }
         }
-        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //bounds for player staying in screen
         private void playerRules()
         {

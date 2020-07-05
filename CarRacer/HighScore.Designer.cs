@@ -60,6 +60,7 @@
             this.Name = "HighScore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HighScore";
+            this.Load += new System.EventHandler(this.HighScore_Load);
             this.ResumeLayout(false);
 
         }

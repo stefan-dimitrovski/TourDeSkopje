@@ -17,13 +17,6 @@ namespace CarRacer
         public HighScore()
         {
             InitializeComponent();
-
-            ArrayList people = new ArrayList();
-            people.Add("Graeme");
-            people.Add("Lin");
-            people.Add("Andy");
-
-            lbScore.DataSource = people;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,7 +24,9 @@ namespace CarRacer
             this.Close();
         }
 
-        
-        
+        private void HighScore_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

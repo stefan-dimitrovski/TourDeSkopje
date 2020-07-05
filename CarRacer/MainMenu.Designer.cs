@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.btnNewGame = new System.Windows.Forms.Button();
-            this.btnHighScore = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.btnHowToPlay = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbHS = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -41,10 +41,11 @@
             // btnNewGame
             // 
             this.btnNewGame.BackColor = System.Drawing.Color.DarkGray;
+            this.btnNewGame.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNewGame.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewGame.ForeColor = System.Drawing.Color.Black;
-            this.btnNewGame.Location = new System.Drawing.Point(113, 262);
+            this.btnNewGame.Location = new System.Drawing.Point(12, 262);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(204, 46);
             this.btnNewGame.TabIndex = 1;
@@ -52,27 +53,13 @@
             this.btnNewGame.UseVisualStyleBackColor = false;
             this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
-            // btnHighScore
-            // 
-            this.btnHighScore.BackColor = System.Drawing.Color.DarkGray;
-            this.btnHighScore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHighScore.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHighScore.ForeColor = System.Drawing.Color.Black;
-            this.btnHighScore.Location = new System.Drawing.Point(113, 366);
-            this.btnHighScore.Name = "btnHighScore";
-            this.btnHighScore.Size = new System.Drawing.Size(204, 46);
-            this.btnHighScore.TabIndex = 2;
-            this.btnHighScore.Text = "High Score";
-            this.btnHighScore.UseVisualStyleBackColor = false;
-            this.btnHighScore.Click += new System.EventHandler(this.btnHighScore_Click);
-            // 
             // btnQuit
             // 
             this.btnQuit.BackColor = System.Drawing.Color.DarkGray;
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuit.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuit.ForeColor = System.Drawing.Color.Black;
-            this.btnQuit.Location = new System.Drawing.Point(113, 419);
+            this.btnQuit.Location = new System.Drawing.Point(12, 366);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(204, 46);
             this.btnQuit.TabIndex = 3;
@@ -83,10 +70,11 @@
             // btnHowToPlay
             // 
             this.btnHowToPlay.BackColor = System.Drawing.Color.DarkGray;
+            this.btnHowToPlay.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHowToPlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHowToPlay.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHowToPlay.ForeColor = System.Drawing.Color.Black;
-            this.btnHowToPlay.Location = new System.Drawing.Point(113, 314);
+            this.btnHowToPlay.Location = new System.Drawing.Point(12, 314);
             this.btnHowToPlay.Name = "btnHowToPlay";
             this.btnHowToPlay.Size = new System.Drawing.Size(204, 46);
             this.btnHowToPlay.TabIndex = 4;
@@ -104,25 +92,33 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // lbHS
+            // 
+            this.lbHS.FormattingEnabled = true;
+            this.lbHS.Location = new System.Drawing.Point(236, 279);
+            this.lbHS.Name = "lbHS";
+            this.lbHS.Size = new System.Drawing.Size(191, 147);
+            this.lbHS.TabIndex = 5;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(392, 452);
+            this.label1.Location = new System.Drawing.Point(233, 263);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "v 1.0";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "HighScore:";
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(439, 477);
+            this.ClientSize = new System.Drawing.Size(439, 438);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbHS);
             this.Controls.Add(this.btnHowToPlay);
             this.Controls.Add(this.btnQuit);
-            this.Controls.Add(this.btnHighScore);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MainMenu";
@@ -139,9 +135,9 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnNewGame;
-        private System.Windows.Forms.Button btnHighScore;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Button btnHowToPlay;
+        private System.Windows.Forms.ListBox lbHS;
         private System.Windows.Forms.Label label1;
     }
 }
