@@ -23,11 +23,9 @@ namespace CarRacer
 
         private void btnNewGame_Click(object sender, EventArgs e)
         {
-            mainmenu.Stop();
+            mainmenu.Stop();          
             GameScreen gs = new GameScreen();
             gs.ShowDialog();
-            
-
         }
 
         private void btnQuit_Click(object sender, EventArgs e)

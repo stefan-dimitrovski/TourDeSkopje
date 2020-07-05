@@ -223,7 +223,7 @@
             this.MinimumSize = new System.Drawing.Size(380, 480);
             this.Name = "GameScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Super Racer";
+            this.Text = "Tour De Skopje";
             this.Load += new System.EventHandler(this.GameScreen_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
