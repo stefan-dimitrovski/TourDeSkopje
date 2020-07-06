@@ -14,7 +14,7 @@ namespace CarRacer
 {
     public partial class GameScreen : Form
     {
-        public string hs { get; set; }
+        public static string scoreTime;
 
         SoundPlayer carengine = new SoundPlayer(Properties.Resources.car_engine);
 
@@ -70,8 +70,10 @@ namespace CarRacer
             {
                 if (player.Bounds.IntersectsWith(enemy1.Bounds))
                 {
-                    hs = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
-                    lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    scoreTime = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    lblEnd.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    lblTime.Visible = false;
+                    lblEnd.Visible = true;
                     gameTime.Enabled = false;
                     carengine.Stop();
                     btnLeave.Visible = true;
@@ -81,8 +83,10 @@ namespace CarRacer
             {
                 if (player.Bounds.IntersectsWith(enemy2.Bounds))
                 {
-                    hs = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
-                    lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    scoreTime = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    lblEnd.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    lblTime.Visible = false;
+                    lblEnd.Visible = true;
                     gameTime.Enabled = false;
                     carengine.Stop();
                     btnLeave.Visible = true;
@@ -92,13 +96,29 @@ namespace CarRacer
             {
                 if (player.Bounds.IntersectsWith(enemy3.Bounds))
                 {
-                    hs = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
-                    lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    scoreTime = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    lblEnd.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    lblEnd.Visible = true;
+                    lblTime.Visible = false;
                     gameTime.Enabled = false;
                     carengine.Stop();
                     btnLeave.Visible = true;
                 }
-            }          
+            }
+            //if(enemy1.Enabled == true || enemy2.Enabled == true || enemy3.Enabled == true)
+            //{
+            //    var col1 = player.Bounds.IntersectsWith(enemy1.Bounds);
+            //    var col2 = player.Bounds.IntersectsWith(enemy2.Bounds);
+            //    var col3 = player.Bounds.IntersectsWith(enemy3.Bounds);
+            //    if (col1 || col2 || col3){
+            //        scoreTime = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+            //        lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+            //        gameTime.Enabled = false;
+            //        carengine.Stop();
+            //        btnLeave.Visible = true;
+            //    }
+
+            //}
         }
 
         //enemy move pattern and color changer
@@ -277,11 +297,12 @@ namespace CarRacer
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnLeave_Click(object sender, EventArgs e)
         {
-
             DialogResult = DialogResult.OK;
         }
+
+
 
         //bounds for player staying in screen
         private void playerRules()

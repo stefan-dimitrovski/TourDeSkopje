@@ -28,22 +28,17 @@ namespace CarRacer
 
         private void btnNewGame_Click(object sender, EventArgs e)
         {
-            mainmenu.Stop();          
+            PlayerInput pinp = new PlayerInput();
+            pinp.ShowDialog();
             GameScreen gs = new GameScreen();
-            if(gs.ShowDialog() == DialogResult.OK)
+            gs.ShowDialog();
+            if (gs.DialogResult == DialogResult.OK)
             {
-                lbHS.Items.Clear();
-                scores.Add(gs.hs);
-                //fuction to sort
-                foreach (string s in scores)
-                {
-                    lbHS.Items.Add(s);
-                }
+                HighScore.pscore = GameScreen.scoreTime;
             }
-            else
-            {
-                //not save score
-            }
+            mainmenu.Stop(); 
+            
+            
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
@@ -57,5 +52,11 @@ namespace CarRacer
             hp.ShowDialog();
         }
 
+        private void btnHighScore_Click(object sender, EventArgs e)
+        {
+            HighScore hs = new HighScore();
+            hs.ShowDialog();
+            
+        }
     }
 }
