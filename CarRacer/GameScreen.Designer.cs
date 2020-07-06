@@ -235,6 +235,7 @@
             this.MaximumSize = new System.Drawing.Size(380, 480);
             this.MinimumSize = new System.Drawing.Size(380, 480);
             this.Name = "GameScreen";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tour De Skopje";
             this.Load += new System.EventHandler(this.GameScreen_Load);
