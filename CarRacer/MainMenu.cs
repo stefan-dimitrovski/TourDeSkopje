@@ -23,11 +23,13 @@ namespace CarRacer
         public MainMenu()
         {
             InitializeComponent();
-            mainmenu.Play();
+            mainmenu.Play(); //start main menu music
         }
 
+        
         private void btnNewGame_Click(object sender, EventArgs e)
         {
+            //stop music, get player name and score to send to scores
             mainmenu.Stop();
             PlayerInput pinp = new PlayerInput();
             pinp.ShowDialog();

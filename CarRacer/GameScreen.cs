@@ -105,20 +105,6 @@ namespace CarRacer
                     btnLeave.Visible = true;
                 }
             }
-            //if(enemy1.Enabled == true || enemy2.Enabled == true || enemy3.Enabled == true)
-            //{
-            //    var col1 = player.Bounds.IntersectsWith(enemy1.Bounds);
-            //    var col2 = player.Bounds.IntersectsWith(enemy2.Bounds);
-            //    var col3 = player.Bounds.IntersectsWith(enemy3.Bounds);
-            //    if (col1 || col2 || col3){
-            //        scoreTime = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
-            //        lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
-            //        gameTime.Enabled = false;
-            //        carengine.Stop();
-            //        btnLeave.Visible = true;
-            //    }
-
-            //}
         }
 
         //enemy move pattern and color changer
@@ -267,7 +253,7 @@ namespace CarRacer
             }
         }
 
-        //start timer before game run
+        //start countdown for game start
         private void timer321_Tick(object sender, EventArgs e)
         {
             switch (Math.Floor(stopwatch.Elapsed.TotalSeconds))

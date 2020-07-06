@@ -111,6 +111,7 @@ namespace CarRacer
                 name = null;
                 pscore = null;
             }
+            //in case score oppened before game played
             else
             {
 
