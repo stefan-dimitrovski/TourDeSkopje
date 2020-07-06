@@ -114,7 +114,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(439, 438);
+            this.ClientSize = new System.Drawing.Size(439, 430);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbHS);
             this.Controls.Add(this.btnHowToPlay);
