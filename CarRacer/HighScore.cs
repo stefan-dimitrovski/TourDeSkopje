@@ -24,9 +24,5 @@ namespace CarRacer
             this.Close();
         }
 
-        private void HighScore_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
