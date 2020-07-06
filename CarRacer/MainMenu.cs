@@ -28,6 +28,7 @@ namespace CarRacer
 
         private void btnNewGame_Click(object sender, EventArgs e)
         {
+            mainmenu.Stop();
             PlayerInput pinp = new PlayerInput();
             pinp.ShowDialog();
             GameScreen gs = new GameScreen();
@@ -36,9 +37,6 @@ namespace CarRacer
             {
                 HighScore.pscore = GameScreen.scoreTime;
             }
-            mainmenu.Stop(); 
-            
-            
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
