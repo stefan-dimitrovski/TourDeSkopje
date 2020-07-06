@@ -8,19 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Microsoft.SqlServer.Server;
+using System.Collections;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Remoting.Messaging;
 
 namespace CarRacer
 {
     public partial class GameScreen : Form
     {
-
+        public static string scoreTime;
         bool left, right;
         private int gamespeed = 4;
         private Stopwatch stopwatch;
+        
 
         public GameScreen()
         {
+
             InitializeComponent();
+            
         }
 
         //functions called every new interval
@@ -28,11 +36,8 @@ namespace CarRacer
         {
             collision();//check for collision
 
-            this.lblTime.Text = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
-
-
-            
-
+            this.lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);// shows ongoing time of the game
+                      
             moveEnemy(gamespeed);//enemy movement function
 
             moveline(gamespeed);//road movement function
@@ -57,14 +62,24 @@ namespace CarRacer
         //collision rules
         private void collision()
         {
-            if (player.Bounds.IntersectsWith(enemy1.Bounds))
+
+            bool col1 = player.Bounds.IntersectsWith(enemy1.Bounds);
+            bool col2 = player.Bounds.IntersectsWith(enemy2.Bounds);
+            //bool col3 = player.Bounds.InteractsWith(enemy3.Bounds);
+            if (col1 || col2)
             {
+
+                lblTime.Visible = false;
+                lblEnd.Visible = true;
+                button1.Visible = true;
                 gameTime.Enabled = false;
+                scoreTime = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                lblEnd.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+
             }
-            if (player.Bounds.IntersectsWith(enemy2.Bounds))
-            {
-                gameTime.Enabled = false;
-            }
+            
+
+
         }
 
         //enemy move pattern
@@ -130,7 +145,11 @@ namespace CarRacer
         {
             if(e.KeyCode == Keys.Right) { right = true; }
             if(e.KeyCode == Keys.Left) { left = true; }
-            if(e.KeyCode == Keys.Escape) { this.Close(); }
+            if(e.KeyCode == Keys.Escape) {
+
+                DialogResult = DialogResult.Cancel;
+                this.Close();             
+            }
             
             
         }
@@ -144,12 +163,18 @@ namespace CarRacer
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            Console.WriteLine(Math.Floor(stopwatch.Elapsed.TotalSeconds));
+
 
             if (Math.Floor(stopwatch.Elapsed.TotalSeconds) % 30 == 0)
             {
                 gamespeed +=1;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)

@@ -35,16 +35,19 @@
             // lbScore
             // 
             this.lbScore.FormattingEnabled = true;
-            this.lbScore.Location = new System.Drawing.Point(12, 12);
+            this.lbScore.ItemHeight = 16;
+            this.lbScore.Location = new System.Drawing.Point(13, 13);
+            this.lbScore.Margin = new System.Windows.Forms.Padding(4);
             this.lbScore.Name = "lbScore";
-            this.lbScore.Size = new System.Drawing.Size(220, 251);
+            this.lbScore.Size = new System.Drawing.Size(300, 324);
             this.lbScore.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(88, 277);
+            this.button1.Location = new System.Drawing.Point(113, 343);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 1;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
@@ -52,14 +55,16 @@
             // 
             // HighScore
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(247, 312);
+            this.ClientSize = new System.Drawing.Size(329, 384);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbScore);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HighScore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HighScore";
+            this.Load += new System.EventHandler(this.HighScore_Load);
             this.ResumeLayout(false);
 
         }

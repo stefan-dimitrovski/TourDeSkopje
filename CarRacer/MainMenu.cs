@@ -19,9 +19,16 @@ namespace CarRacer
 
         private void btnNewGame_Click(object sender, EventArgs e)
         {
+            PlayerInput pinp = new PlayerInput();
+            pinp.ShowDialog();
             GameScreen gs = new GameScreen();
-            MainMenu mm = new MainMenu();
             gs.ShowDialog();
+            //When game is over, send result to score table
+            if (gs.DialogResult == DialogResult.OK)
+            {
+                HighScore.pscore = GameScreen.scoreTime;
+            }
+
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
