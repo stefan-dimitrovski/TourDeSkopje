@@ -107,8 +107,14 @@ namespace CarRacer
             if(enemy1.Top >= 480)
             {
                 enemy1.Top = -75;
-                enemy1.Left = rnd.Next(12, 320);
                 enemy1.Image = colors[rnd.Next(0, 5)];
+
+                if (enemy2.Enabled == false)
+                    enemy1.Left = rnd.Next(18, 310);
+                else if (enemy3.Enabled == false)
+                    enemy1.Left = rnd.Next(18, 146);
+                else
+                    enemy1.Left = rnd.Next(18, 115);
             }
             else
             {
@@ -117,8 +123,12 @@ namespace CarRacer
             if (enemy2.Top >= 480)
             {
                 enemy2.Top = -75;
-                enemy2.Left=rnd.Next(12, 320);
                 enemy2.Image = colors[rnd.Next(0, 5)];
+
+                if (enemy3.Enabled == false)
+                    enemy2.Left = rnd.Next(146, 310);
+                else
+                    enemy2.Left = rnd.Next(116, 213);
             }
             else
             {
@@ -128,8 +138,9 @@ namespace CarRacer
             if (enemy3.Top >= 480)
             {
                 enemy3.Top = -75;
-                enemy3.Left = rnd.Next(12, 320);
                 enemy3.Image = colors[rnd.Next(0, 5)];
+
+                enemy3.Left = rnd.Next(213, 310);
             }
             else
             {
