@@ -66,7 +66,6 @@ namespace CarRacer
 
             }
             return list;
-
         }
 
         public HighScore()
@@ -111,5 +110,6 @@ namespace CarRacer
             }
             
         }
+
     }
 }

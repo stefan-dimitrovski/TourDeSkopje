@@ -30,25 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.btnNewGame = new System.Windows.Forms.Button();
-            this.btnHighScore = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.btnHowToPlay = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbHS = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNewGame
             // 
+
             this.btnNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNewGame.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewGame.Location = new System.Drawing.Point(113, 262);
+
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(204, 46);
             this.btnNewGame.TabIndex = 1;
             this.btnNewGame.Text = "New Game";
-            this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.UseVisualStyleBackColor = false;
             this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
+
             // btnHighScore
             // 
             this.btnHighScore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -66,23 +70,26 @@
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuit.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuit.Location = new System.Drawing.Point(113, 419);
+
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(204, 46);
             this.btnQuit.TabIndex = 3;
             this.btnQuit.Text = "Quit";
-            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.UseVisualStyleBackColor = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // btnHowToPlay
             // 
+
             this.btnHowToPlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHowToPlay.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHowToPlay.Location = new System.Drawing.Point(113, 314);
+
             this.btnHowToPlay.Name = "btnHowToPlay";
             this.btnHowToPlay.Size = new System.Drawing.Size(204, 46);
             this.btnHowToPlay.TabIndex = 4;
             this.btnHowToPlay.Text = "Instructions";
-            this.btnHowToPlay.UseVisualStyleBackColor = true;
+            this.btnHowToPlay.UseVisualStyleBackColor = false;
             this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
             // 
             // pictureBox1
@@ -95,23 +102,42 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // lbHS
+            // 
+            this.lbHS.FormattingEnabled = true;
+            this.lbHS.Location = new System.Drawing.Point(236, 279);
+            this.lbHS.Name = "lbHS";
+            this.lbHS.Size = new System.Drawing.Size(191, 147);
+            this.lbHS.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(233, 263);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "HighScore:";
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
+
             this.ClientSize = new System.Drawing.Size(439, 477);
+
             this.Controls.Add(this.btnHowToPlay);
             this.Controls.Add(this.btnQuit);
-            this.Controls.Add(this.btnHighScore);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MainMenu";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Street Racer";
+            this.Text = "Tour De Skopje";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -119,8 +145,9 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnNewGame;
-        private System.Windows.Forms.Button btnHighScore;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Button btnHowToPlay;
+        private System.Windows.Forms.ListBox lbHS;
+        private System.Windows.Forms.Label label1;
     }
 }

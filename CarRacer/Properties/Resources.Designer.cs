@@ -61,6 +61,15 @@ namespace CarRacer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream car_engine {
+            get {
+                return ResourceManager.GetStream("car_engine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap car1 {
@@ -127,6 +136,15 @@ namespace CarRacer.Properties {
             get {
                 object obj = ResourceManager.GetObject("FreeVector_Keyboard_Arrows", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream main_menu {
+            get {
+                return ResourceManager.GetStream("main_menu", resourceCulture);
             }
         }
     }

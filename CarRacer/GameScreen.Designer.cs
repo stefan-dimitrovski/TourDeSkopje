@@ -40,9 +40,11 @@
             this.enemy2 = new System.Windows.Forms.PictureBox();
             this.player = new System.Windows.Forms.PictureBox();
             this.lblTime = new System.Windows.Forms.Label();
+
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.lblEnd = new System.Windows.Forms.Label();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
@@ -52,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.enemy1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -101,9 +104,8 @@
             // 
             // gameTime
             // 
-            this.gameTime.Enabled = true;
             this.gameTime.Interval = 1;
-            this.gameTime.Tick += new System.EventHandler(this.timer1_Tick);
+            this.gameTime.Tick += new System.EventHandler(this.gameSpeed_Tick);
             // 
             // pb4
             // 
@@ -117,30 +119,34 @@
             // enemy1
             // 
             this.enemy1.BackColor = System.Drawing.Color.Transparent;
-            this.enemy1.Image = global::CarRacer.Properties.Resources.car2;
-            this.enemy1.Location = new System.Drawing.Point(269, 34);
+            this.enemy1.Enabled = false;
+            this.enemy1.Image = global::CarRacer.Properties.Resources.car5;
+            this.enemy1.Location = new System.Drawing.Point(226, 375);
             this.enemy1.Name = "enemy1";
             this.enemy1.Size = new System.Drawing.Size(37, 68);
             this.enemy1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.enemy1.TabIndex = 7;
             this.enemy1.TabStop = false;
+            this.enemy1.Visible = false;
             // 
             // enemy2
             // 
             this.enemy2.BackColor = System.Drawing.Color.Transparent;
-            this.enemy2.Image = global::CarRacer.Properties.Resources.car2;
-            this.enemy2.Location = new System.Drawing.Point(62, 351);
+            this.enemy2.Enabled = false;
+            this.enemy2.Image = global::CarRacer.Properties.Resources.car4;
+            this.enemy2.Location = new System.Drawing.Point(226, 187);
             this.enemy2.Name = "enemy2";
             this.enemy2.Size = new System.Drawing.Size(37, 68);
             this.enemy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.enemy2.TabIndex = 8;
             this.enemy2.TabStop = false;
+            this.enemy2.Visible = false;
             // 
             // player
             // 
             this.player.BackColor = System.Drawing.Color.Transparent;
             this.player.Image = global::CarRacer.Properties.Resources.car6;
-            this.player.Location = new System.Drawing.Point(159, 351);
+            this.player.Location = new System.Drawing.Point(155, 336);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(37, 68);
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -157,12 +163,55 @@
             this.lblTime.Size = new System.Drawing.Size(108, 25);
             this.lblTime.TabIndex = 10;
             this.lblTime.Text = "00:00:000";
+
             // 
-            // timer1
+            // timerSpeedUp
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            this.timerSpeedUp.Enabled = true;
+            this.timerSpeedUp.Interval = 1000;
+            this.timerSpeedUp.Tick += new System.EventHandler(this.timerSpeedUp_Tick);
+            // 
+            // enemy3
+            // 
+            this.enemy3.BackColor = System.Drawing.Color.Transparent;
+            this.enemy3.Enabled = false;
+            this.enemy3.Image = global::CarRacer.Properties.Resources.car1;
+            this.enemy3.Location = new System.Drawing.Point(226, 0);
+            this.enemy3.Name = "enemy3";
+            this.enemy3.Size = new System.Drawing.Size(37, 68);
+            this.enemy3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.enemy3.TabIndex = 11;
+            this.enemy3.TabStop = false;
+            this.enemy3.Visible = false;
+            // 
+            // lbl321
+            // 
+            this.lbl321.BackColor = System.Drawing.Color.Transparent;
+            this.lbl321.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl321.Font = new System.Drawing.Font("Microsoft Sans Serif", 150F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl321.Location = new System.Drawing.Point(45, 47);
+            this.lbl321.Name = "lbl321";
+            this.lbl321.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl321.Size = new System.Drawing.Size(280, 280);
+            this.lbl321.TabIndex = 12;
+            this.lbl321.Text = "3";
+            this.lbl321.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer321
+            // 
+            this.timer321.Enabled = true;
+            this.timer321.Tick += new System.EventHandler(this.timer321_Tick);
+            // 
+            // btnLeave
+            // 
+            this.btnLeave.Location = new System.Drawing.Point(145, 209);
+            this.btnLeave.Name = "btnLeave";
+            this.btnLeave.Size = new System.Drawing.Size(75, 23);
+            this.btnLeave.TabIndex = 13;
+            this.btnLeave.Text = "Exit";
+            this.btnLeave.UseVisualStyleBackColor = true;
+            this.btnLeave.Visible = false;
+            this.btnLeave.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button1
             // 
@@ -196,9 +245,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
+
             this.ClientSize = new System.Drawing.Size(364, 440);
             this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.button1);
+
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.player);
             this.Controls.Add(this.enemy2);
@@ -212,8 +263,9 @@
             this.MaximumSize = new System.Drawing.Size(380, 479);
             this.MinimumSize = new System.Drawing.Size(380, 479);
             this.Name = "GameScreen";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Super Racer";
+            this.Text = "Tour De Skopje";
             this.Load += new System.EventHandler(this.GameScreen_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
@@ -226,6 +278,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.enemy1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,6 +300,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblEnd;
+
     }
 }
 
