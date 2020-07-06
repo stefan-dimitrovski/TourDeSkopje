@@ -14,14 +14,14 @@
 
 Целиот код е спакуван за да лесно се разбере и сите сегменти се коментирани која функција ја извршуваат. Да го разгледаме следниов код:
 
-Tick Function
+<img src="https://i.imgur.com/S8EA6Xr.png" alt="tick"/>
 
 Функцијава е можеби најглавната за функционалноста на целата игра, овозможува движење на предметите, го подесува времето и детектира колизија.
 
 Во следната функција се оневозможува играчот да излезе надвор од екранот при движење на колата
 
 
-Tick Function
+<img src="https://i.imgur.com/zaDuwCf.png" alt="bound"/>
 
 == Податоците ==
 
@@ -31,26 +31,27 @@ Tick Function
 
 Main Menu screen
 
-Main Menu
+<img src="https://i.imgur.com/mAUDOEx.png" alt="mainmenu"/>
 
 How to play screen
 
-How to play
+<img src="https://i.imgur.com/7ykZWvv.png" alt="howtoplay"/>
 
-HighScore screen
+Score screen
 
-Tick Function
+<img src="https://i.imgur.com/EJQ8rS1.png" alt="score"/>
 
 Game Screen
 
-Tick Function
+<img src="https://i.imgur.com/ev6nIm5.png" alt="game"/>
 
 Game Over
 
-Tick Function
+<img src="https://i.imgur.com/oMibqvH.png" alt="gameover"/>
 
 == Изработено ==
-
-Стефан Димитровски 181258
-Бојан Симоновски 181140
-Мартин Рајковски 181557
+<ul>
+  <li>Стефан Димитровски 181258</li>
+  <li>Бојан Симоновски 181140</li>
+  <li>Мартин Рајковски 181557</li>
+</ul>
