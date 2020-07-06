@@ -49,7 +49,7 @@ namespace CarRacer
         //functions called every new interval
         private void gameSpeed_Tick(object sender, EventArgs e)
         {
-            this.lblTime.Text = string.Format("{0:mm\\:ss}", stopwatch.Elapsed); //Time format for highscore
+            lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed); //Time format for highscore
 
             collision();//check for collision         
 
@@ -70,31 +70,33 @@ namespace CarRacer
             {
                 if (player.Bounds.IntersectsWith(enemy1.Bounds))
                 {
+                    hs = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
                     gameTime.Enabled = false;
                     carengine.Stop();
-                    hs = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
-                    DialogResult = DialogResult.OK;
-
+                    btnLeave.Visible = true;
                 }
             }
             if (enemy2.Enabled == true)
             {
                 if (player.Bounds.IntersectsWith(enemy2.Bounds))
                 {
+                    hs = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
                     gameTime.Enabled = false;
                     carengine.Stop();
-                    hs = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
-                    DialogResult = DialogResult.OK;
+                    btnLeave.Visible = true;
                 }
             }
             if (enemy3.Enabled == true)
             {
                 if (player.Bounds.IntersectsWith(enemy3.Bounds))
                 {
+                    hs = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
                     gameTime.Enabled = false;
                     carengine.Stop();
-                    hs = string.Format("{0:mm\\:ss}", stopwatch.Elapsed);
-                    DialogResult = DialogResult.OK;
+                    btnLeave.Visible = true;
                 }
             }          
         }
@@ -264,9 +266,10 @@ namespace CarRacer
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
+            DialogResult = DialogResult.OK;
         }
 
         //bounds for player staying in screen
