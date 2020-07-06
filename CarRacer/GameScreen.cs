@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,10 @@ namespace CarRacer
 {
     public partial class GameScreen : Form
     {
+        public string hs { get; set; }
+
+        SoundPlayer carengine = new SoundPlayer(Properties.Resources.car_engine);
+
         //car types list
         Bitmap[] colors =
         {
@@ -38,12 +43,13 @@ namespace CarRacer
         {
             stopwatch = new Stopwatch();
             stopwatch.Start();
+            
         }
 
         //functions called every new interval
         private void gameSpeed_Tick(object sender, EventArgs e)
         {
-            this.lblTime.Text = string.Format("{0:mm\\:ss}", stopwatch.Elapsed); //Time format for highscore
+            lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed); //Time format for highscore
 
             collision();//check for collision         
 
@@ -64,21 +70,33 @@ namespace CarRacer
             {
                 if (player.Bounds.IntersectsWith(enemy1.Bounds))
                 {
-                    gameTime.Enabled = false;                   
+                    hs = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    gameTime.Enabled = false;
+                    carengine.Stop();
+                    btnLeave.Visible = true;
                 }
             }
             if (enemy2.Enabled == true)
             {
                 if (player.Bounds.IntersectsWith(enemy2.Bounds))
                 {
-                    gameTime.Enabled = false;                   
+                    hs = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    gameTime.Enabled = false;
+                    carengine.Stop();
+                    btnLeave.Visible = true;
                 }
             }
             if (enemy3.Enabled == true)
             {
                 if (player.Bounds.IntersectsWith(enemy3.Bounds))
                 {
-                    gameTime.Enabled = false;                   
+                    hs = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    lblTime.Text = string.Format("{0:mm\\:ss\\:fff}", stopwatch.Elapsed);
+                    gameTime.Enabled = false;
+                    carengine.Stop();
+                    btnLeave.Visible = true;
                 }
             }          
         }
@@ -161,7 +179,12 @@ namespace CarRacer
         {
             if(e.KeyCode == Keys.Right) { right = true; }
             if(e.KeyCode == Keys.Left) { left = true; }
-            if(e.KeyCode == Keys.Escape) { this.Close(); }                    
+            if(e.KeyCode == Keys.Escape)
+            {
+                carengine.Stop();
+                DialogResult = DialogResult.Cancel;
+                this.Close(); 
+            }                    
         }
         //stop on key up
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -238,10 +261,17 @@ namespace CarRacer
                     gameTime.Enabled = true;
                     lbl321.Visible = false;
                     timer321.Stop();
+                    carengine.PlayLooping();
                     break;
             }
         }
-        
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            DialogResult = DialogResult.OK;
+        }
+
         //bounds for player staying in screen
         private void playerRules()
         {

@@ -123,6 +123,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(142, 395);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(236, 34);

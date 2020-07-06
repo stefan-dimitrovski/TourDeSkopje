@@ -44,6 +44,7 @@
             this.enemy3 = new System.Windows.Forms.PictureBox();
             this.lbl321 = new System.Windows.Forms.Label();
             this.timer321 = new System.Windows.Forms.Timer(this.components);
+            this.btnLeave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
@@ -201,12 +202,24 @@
             this.timer321.Enabled = true;
             this.timer321.Tick += new System.EventHandler(this.timer321_Tick);
             // 
+            // btnLeave
+            // 
+            this.btnLeave.Location = new System.Drawing.Point(145, 209);
+            this.btnLeave.Name = "btnLeave";
+            this.btnLeave.Size = new System.Drawing.Size(75, 23);
+            this.btnLeave.TabIndex = 13;
+            this.btnLeave.Text = "Exit";
+            this.btnLeave.UseVisualStyleBackColor = true;
+            this.btnLeave.Visible = false;
+            this.btnLeave.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(364, 441);
+            this.Controls.Add(this.btnLeave);
             this.Controls.Add(this.lbl321);
             this.Controls.Add(this.enemy3);
             this.Controls.Add(this.lblTime);
@@ -223,7 +236,7 @@
             this.MinimumSize = new System.Drawing.Size(380, 480);
             this.Name = "GameScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Super Racer";
+            this.Text = "Tour De Skopje";
             this.Load += new System.EventHandler(this.GameScreen_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
@@ -259,6 +272,7 @@
         private System.Windows.Forms.PictureBox enemy3;
         private System.Windows.Forms.Label lbl321;
         private System.Windows.Forms.Timer timer321;
+        private System.Windows.Forms.Button btnLeave;
     }
 }
 
