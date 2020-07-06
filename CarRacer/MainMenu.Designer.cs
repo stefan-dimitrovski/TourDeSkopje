@@ -39,6 +39,8 @@
             // 
             // btnNewGame
             // 
+            this.btnNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNewGame.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewGame.Location = new System.Drawing.Point(113, 262);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(204, 46);
@@ -49,6 +51,8 @@
             // 
             // btnHighScore
             // 
+            this.btnHighScore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHighScore.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHighScore.Location = new System.Drawing.Point(113, 366);
             this.btnHighScore.Name = "btnHighScore";
             this.btnHighScore.Size = new System.Drawing.Size(204, 46);
@@ -59,6 +63,8 @@
             // 
             // btnQuit
             // 
+            this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnQuit.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuit.Location = new System.Drawing.Point(113, 419);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(204, 46);
@@ -69,6 +75,8 @@
             // 
             // btnHowToPlay
             // 
+            this.btnHowToPlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHowToPlay.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHowToPlay.Location = new System.Drawing.Point(113, 314);
             this.btnHowToPlay.Name = "btnHowToPlay";
             this.btnHowToPlay.Size = new System.Drawing.Size(204, 46);

@@ -57,50 +57,45 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(-7, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(-5, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 545);
+            this.pictureBox1.Size = new System.Drawing.Size(12, 443);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Location = new System.Drawing.Point(479, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(359, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 545);
+            this.pictureBox2.Size = new System.Drawing.Size(12, 443);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // pb1
             // 
             this.pb1.BackColor = System.Drawing.Color.White;
-            this.pb1.Location = new System.Drawing.Point(227, 0);
-            this.pb1.Margin = new System.Windows.Forms.Padding(4);
+            this.pb1.Location = new System.Drawing.Point(170, 0);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(9, 114);
+            this.pb1.Size = new System.Drawing.Size(7, 93);
             this.pb1.TabIndex = 2;
             this.pb1.TabStop = false;
             // 
             // pb2
             // 
             this.pb2.BackColor = System.Drawing.Color.White;
-            this.pb2.Location = new System.Drawing.Point(227, 171);
-            this.pb2.Margin = new System.Windows.Forms.Padding(4);
+            this.pb2.Location = new System.Drawing.Point(170, 139);
             this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(9, 114);
+            this.pb2.Size = new System.Drawing.Size(7, 93);
             this.pb2.TabIndex = 3;
             this.pb2.TabStop = false;
             // 
             // pb3
             // 
             this.pb3.BackColor = System.Drawing.Color.White;
-            this.pb3.Location = new System.Drawing.Point(227, 343);
-            this.pb3.Margin = new System.Windows.Forms.Padding(4);
+            this.pb3.Location = new System.Drawing.Point(170, 279);
             this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(9, 114);
+            this.pb3.Size = new System.Drawing.Size(7, 93);
             this.pb3.TabIndex = 4;
             this.pb3.TabStop = false;
             // 
@@ -113,10 +108,9 @@
             // pb4
             // 
             this.pb4.BackColor = System.Drawing.Color.White;
-            this.pb4.Location = new System.Drawing.Point(227, 516);
-            this.pb4.Margin = new System.Windows.Forms.Padding(4);
+            this.pb4.Location = new System.Drawing.Point(170, 419);
             this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(9, 114);
+            this.pb4.Size = new System.Drawing.Size(7, 93);
             this.pb4.TabIndex = 5;
             this.pb4.TabStop = false;
             // 
@@ -124,10 +118,9 @@
             // 
             this.enemy1.BackColor = System.Drawing.Color.Transparent;
             this.enemy1.Image = global::CarRacer.Properties.Resources.car2;
-            this.enemy1.Location = new System.Drawing.Point(359, 42);
-            this.enemy1.Margin = new System.Windows.Forms.Padding(4);
+            this.enemy1.Location = new System.Drawing.Point(269, 34);
             this.enemy1.Name = "enemy1";
-            this.enemy1.Size = new System.Drawing.Size(49, 84);
+            this.enemy1.Size = new System.Drawing.Size(37, 68);
             this.enemy1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.enemy1.TabIndex = 7;
             this.enemy1.TabStop = false;
@@ -136,10 +129,9 @@
             // 
             this.enemy2.BackColor = System.Drawing.Color.Transparent;
             this.enemy2.Image = global::CarRacer.Properties.Resources.car2;
-            this.enemy2.Location = new System.Drawing.Point(83, 432);
-            this.enemy2.Margin = new System.Windows.Forms.Padding(4);
+            this.enemy2.Location = new System.Drawing.Point(62, 351);
             this.enemy2.Name = "enemy2";
-            this.enemy2.Size = new System.Drawing.Size(49, 84);
+            this.enemy2.Size = new System.Drawing.Size(37, 68);
             this.enemy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.enemy2.TabIndex = 8;
             this.enemy2.TabStop = false;
@@ -148,10 +140,9 @@
             // 
             this.player.BackColor = System.Drawing.Color.Transparent;
             this.player.Image = global::CarRacer.Properties.Resources.car6;
-            this.player.Location = new System.Drawing.Point(212, 432);
-            this.player.Margin = new System.Windows.Forms.Padding(4);
+            this.player.Location = new System.Drawing.Point(159, 351);
             this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(49, 84);
+            this.player.Size = new System.Drawing.Size(37, 68);
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.player.TabIndex = 9;
             this.player.TabStop = false;
@@ -161,10 +152,9 @@
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTime.Location = new System.Drawing.Point(19, 16);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTime.Location = new System.Drawing.Point(14, 13);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(135, 31);
+            this.lblTime.Size = new System.Drawing.Size(108, 25);
             this.lblTime.TabIndex = 10;
             this.lblTime.Text = "00:00:000";
             // 
@@ -177,9 +167,11 @@
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(178, 275);
+            this.button1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(111, 219);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 61);
+            this.button1.Size = new System.Drawing.Size(126, 74);
             this.button1.TabIndex = 11;
             this.button1.Text = "Return to main menu";
             this.button1.UseVisualStyleBackColor = true;
@@ -191,19 +183,20 @@
             this.lblEnd.AutoSize = true;
             this.lblEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnd.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblEnd.Location = new System.Drawing.Point(187, 206);
+            this.lblEnd.Location = new System.Drawing.Point(140, 167);
+            this.lblEnd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEnd.Name = "lblEnd";
-            this.lblEnd.Size = new System.Drawing.Size(93, 32);
+            this.lblEnd.Size = new System.Drawing.Size(70, 26);
             this.lblEnd.TabIndex = 12;
             this.lblEnd.Text = "label1";
             this.lblEnd.Visible = false;
             // 
             // GameScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(483, 533);
+            this.ClientSize = new System.Drawing.Size(364, 440);
             this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTime);
@@ -216,9 +209,8 @@
             this.Controls.Add(this.pb1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(501, 580);
-            this.MinimumSize = new System.Drawing.Size(501, 580);
+            this.MaximumSize = new System.Drawing.Size(380, 479);
+            this.MinimumSize = new System.Drawing.Size(380, 479);
             this.Name = "GameScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Super Racer";
