@@ -208,7 +208,7 @@
             this.btnLeave.Name = "btnLeave";
             this.btnLeave.Size = new System.Drawing.Size(75, 23);
             this.btnLeave.TabIndex = 13;
-            this.btnLeave.Text = "button1";
+            this.btnLeave.Text = "Exit";
             this.btnLeave.UseVisualStyleBackColor = true;
             this.btnLeave.Visible = false;
             this.btnLeave.Click += new System.EventHandler(this.button1_Click_1);
