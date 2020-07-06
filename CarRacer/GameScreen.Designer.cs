@@ -169,7 +169,7 @@
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(111, 219);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 74);
             this.button1.TabIndex = 11;
@@ -183,7 +183,7 @@
             this.lblEnd.AutoSize = true;
             this.lblEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnd.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblEnd.Location = new System.Drawing.Point(140, 167);
+            this.lblEnd.Location = new System.Drawing.Point(126, 165);
             this.lblEnd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.Size = new System.Drawing.Size(70, 26);
