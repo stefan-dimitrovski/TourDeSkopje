@@ -99,6 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(439, 477);
             this.Controls.Add(this.btnHowToPlay);
             this.Controls.Add(this.btnQuit);
@@ -106,6 +107,7 @@
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MainMenu";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Street Racer";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
